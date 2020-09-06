@@ -7,6 +7,35 @@ class Book{
 	}
 }
 
+// Store Class: values in localStorage are stored as key value pair in string format
+class Store{
+	static getBooks(){
+		let books = [];
+		if (localStorage.getItem('books') !== null) {
+			books = JSON.parse(localStorage.getItem('books'));
+		}
+
+		return books;
+	}
+
+	static addBook(book){
+		let books = Store.getBooks();
+		books.push(book);
+		localStorage.setItem('books', JSON.stringify(books));
+	}
+
+	static removeBook(isbn){
+		let books = Store.getBooks();
+		books.forEach((book, index) => {
+			if (book.isbn === isbn) {
+				books.splice(index, 1);
+			}
+		});
+
+		localStorage.setItem('books', JSON.stringify(books));
+	}
+}
+
 // BookU Class: manage all book related UI task in this class
 class BookUI{
 	static displayBooks(){
@@ -24,7 +53,8 @@ class BookUI{
 		];
 
 		// add books to the list
-		const books = storedBooks;
+		const books = Store.getBooks();
+
 		books.forEach((book) => BookUI.addBookToList(book));
 	}
 
@@ -107,20 +137,30 @@ document.querySelector('#add-book').addEventListener('click', (e) => {
 		return;
 	}
 	
-	// add book to the list
+	// add book to local storage and dispaly in the list UI
 	const book = new Book(title, author, isbn);
+	
+	// add book to UI
 	BookUI.addBookToList(book);
 
-	// show success alert
-	BookUI.showAlert("Book added successfully.", "success");
+	// add book to local storage
+	Store.addBook(book);
 
 	// clear input fields
 	BookUI.clearInputFields();
+
+	// show success alert
+	BookUI.showAlert("Book added successfully.", "success");
 });
 
 // Event: Remove/Delete Book from List
 // -----------------------------------
 document.querySelector('#book-list').addEventListener('click', (e) => {
 	e.preventDefault();
+
+	// remove book from UI
 	BookUI.deleteElementFromBookList(e.target)
+
+	// remove book from local storage
+	Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });

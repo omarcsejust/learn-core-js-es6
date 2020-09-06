@@ -5,7 +5,7 @@ function Book(title, author, year){
 	this.year = year;
 }
 
-// set getSummary prototype to Book object __proto__ section
+// set getSummary prototype to Book object's __proto__ section
 // prototypes will not be shown in the main object, they will 
 // be appear in the __proto__ section of an object
 Book.prototype.getSummary = function(){
@@ -20,7 +20,7 @@ function Magazine(title, author, year, month){
 }
 
 
-// Now Inherite the prototypes(e.g: getSummary) of Book Constructor
+// Now Inherite the prototypes(e.g: getSummary) of Book
 Magazine.prototype = Object.create(Book.prototype);
 
 // Instantiate Magazine
