@@ -17,7 +17,7 @@ const book1 = {
 	}
 }
 
-// if we need aother book the we need to duplicate the above object
+// if we need aother book then we need to duplicate the above object
 const book2 = {
 	title: "Book Two",
 	author: "Jane Doe",

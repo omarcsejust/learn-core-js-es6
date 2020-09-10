@@ -22,7 +22,7 @@ class Book{
 // Class Inheritence
 class Magazine extends Book{
 	constructor(title, author, year, month){
-		super(title, author, year); // call parent(Book) constructor
+		super(title, author, year); // call parent(Book) class constructor
 		this.month = month;
 	}
 }

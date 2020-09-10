@@ -45,7 +45,7 @@ const {
 
 console.log(dogName);
 
-// If nested object not present the assign a default value for that object
+// If nested object not present then assign a default value for that object
 // -----------------------------------------------------------------------
 const {
     shirt: {

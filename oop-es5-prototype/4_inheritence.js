@@ -15,7 +15,7 @@ Book.prototype.getSummary = function(){
 // Magazine Constructor : Inherite the properties(e.g: title, author, year) of Book constructor 
 //(But in this way can't inherite the prototypes of Book Constructor)
 function Magazine(title, author, year, month){
-	Book.call(this, title, author, year); // here this is the instance of Magazine Constructor
+	Book.call(this, title, author, year); // here "this" is the instance of Magazine Constructor
 	this.month = month;
 }
 
