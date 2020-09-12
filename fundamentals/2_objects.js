@@ -87,7 +87,7 @@ circle_obj.location = {x:1, y:3};
 circle_obj['new_property'] = "I am added dynamically";
 console.log(circle_obj);  // New property "location" & "new_property" added to the circle_obj
 
-delete circle_obj.location;  // Remove l"location" property from circle_obj
+delete circle_obj.location;  // Remove "location" property from circle_obj
 console.log(circle_obj);
 
 // Loop/Enumeriting over object
