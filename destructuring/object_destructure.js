@@ -56,3 +56,37 @@ const {
 } = person;
 
 console.log(color);
+
+// Advanced nested destructure
+const myData = {
+    data: {
+        item: {
+            name: 'shoes',
+            size: {
+                US: 40,
+                EU: 55
+            }
+        }
+    },
+    status: 'live'
+}
+
+const {data: {item: {name: item_name, size: {US, EU}}}} = myData;  // Re-name name key with item_name variable
+
+console.log(item_name, US, EU);  // Here, data, item, size are not variable now, because using those we destructure nested values
+//console.log(data);  // Error: data is not defined
+
+
+// Nested destructure both Array & Object
+const product = {
+    data: {
+        items: [
+            {name: 'Shoes', price: 250},
+            {name: 'Shirt', price: 140}
+        ]
+    },
+    status: 'live'
+}
+
+const {data: {items: [item1, item2]}} = product;
+console.log(item1, item2);

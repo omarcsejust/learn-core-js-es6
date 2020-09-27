@@ -21,7 +21,7 @@ console.log(std_roll);
 let std_map_keys = student.keys();
 console.log(std_map_keys);
 
-// get all values from map
+// get all values from a map
 let std_map_values = student.values();
 console.log(std_map_values);
 
