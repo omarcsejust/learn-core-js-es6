@@ -50,10 +50,10 @@
   */
 
   fruits2.push("Coconut");
-  console.log(fruits);
+  console.log(fruits);  // Original Array fruit has been updated also
 
   fruits.push("Berry");
-  console.log(fruits2);
+  console.log(fruits2);  // vice-versa
 
   // To solve this proble we can use spread operator
   const fruits3 = [...fruits];

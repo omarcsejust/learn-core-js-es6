@@ -16,7 +16,8 @@ console.log(name);
 var age = 27;
 
 /*
- Hoisting does not work for let variable
+   1. Hoisting does not work for let variable (Generate Error)
+   2. Hoisting doeas not work for const variable (Generate Error)
 */
 // title = "Software Engineer";
 // let title;

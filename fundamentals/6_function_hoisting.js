@@ -20,3 +20,31 @@ function functionHoisting(){
 }
 
 functionHoisting();
+
+
+// Calling function before declaration and it wroks, actually JS takes the function to the top of the program
+sayHello();
+
+function sayHello(){
+    console.log("Hello good people!");
+}
+
+
+// Another type function
+/*
+In this case JS will give an Error, that is sayAge is not a function.
+
+In the below code what happen is:
+---------------------------------
+var sayAge;
+sayAge();  // Look sayAge is not a function, JS is Right :)
+
+sayAge = function(){
+    console.log("I am 25 Years old.");
+}
+*/
+sayAge();
+
+var sayAge = function(){
+    console.log("I am 25 Years old.");
+}
