@@ -90,3 +90,36 @@ const product = {
 
 const {data: {items: [item1, item2]}} = product;
 console.log(item1, item2);
+
+
+// Super nested multi level destructure
+//--------------------------------------
+const dataObj = {
+    name: "Omar",
+    age: 27,
+    pets: {
+        dogs: [
+            {
+                name: "Rocky",
+                age: 5,
+                color: "Black"
+            },
+            {
+                name: "KKR",
+                age: 6,
+                color: "Red"
+            }
+        ],
+        cats: [
+            {
+                name: "Mew",
+                age: 2,
+                color: "White"
+            }
+        ]
+    }
+}
+
+const {pets: {dogs: [{name: d1Name, age: d1Age} = dog1, dog2]}} = dataObj
+console.log(d1Name, d1Age)  // variable from Array Object
+console.log(dog2) // object from Array list
